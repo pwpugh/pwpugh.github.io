@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAggie - About & Contact</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery and jQuery-UI for dialog widget (Part 3) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <!-- Contains the main branding and site title -->
+    <header>
+        <h1>CodeAggie</h1>
+        <p class="tagline">Master JavaScript Basics - NC A&T</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <!-- This navigation bar appears on all pages and contains links to the four main pages:
+         (1) "index.html": Home page with overview and welcome message
+         (2) "quiz.html": Interactive JavaScript quiz page
+         (3) "examples.html": Code examples and calculator tool
+         (4) "about.html": About information and contact form -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="examples.html">Examples</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <!-- Contains about information and contact form -->
+    <main>
+        <h2>About CodeAggie</h2>
+
+        <!-- Mission Section -->
+        <!-- Explains the purpose and goals of CodeAggie platform -->
+        <section class="about-section">
+            <h3>Our Mission</h3>
+            <p>CodeAggie is an educational platform designed to help NC A&T students and beginners learn JavaScript fundamentals through interactive quizzes and practical examples. We believe learning to code should be accessible, engaging, and fun!</p>
+        </section>
+
+        <!-- What We Offer Section -->
+        <!-- Lists the key features and benefits of using CodeAggie -->
+        <section class="about-section">
+            <h3>What We Offer</h3>
+            <ul>
+                <li>Interactive JavaScript quizzes covering variables, functions, loops, and arrays</li>
+                <li>Clear code examples with explanations</li>
+                <li>Hands-on practice with a simple calculator tool</li>
+                <li>Progress tracking to monitor your learning journey</li>
+                <li>A clean, beginner-friendly interface</li>
+            </ul>
+        </section>
+
+        <!-- Get Started Section -->
+        <!-- Provides links to main features -->
+        <section class="about-section">
+            <h3>Get Started</h3>
+            <p>Ready to begin your JavaScript journey? Start with our <a href="quiz.html">interactive quiz</a> or explore our <a href="examples.html">code examples</a> to see JavaScript in action!</p>
+        </section>
+
+        <!-- Contact Information Section -->
+        <!-- Displays email and institution information -->
+        <section class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> info@codeaggie.com</p>
+            <p><strong>Institution:</strong> North Carolina A&T State University</p>
+            <p>This is an educational project created for CST 231: Web Systems</p>
+        </section>
+
+        <!-- Contact Form Section -->
+        <!-- Form for users to send messages (validation in Part 3) -->
+        <section class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <p>Have questions, feedback, or suggestions? We'd love to hear from you!</p>
+
+            <form id="contactForm">
+                <!-- Name Field -->
+                <!-- Required field with minimum 2 characters validation -->
+                <div class="form-group">
+                    <label for="name">Name: <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required>
+                    <span class="error-message" id="nameError"></span>
+                </div>
+
+                <!-- Email Field -->
+                <!-- Required field with email format validation -->
+                <div class="form-group">
+                    <label for="email">Email: <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required>
+                    <span class="error-message" id="emailError"></span>
+                </div>
+
+                <!-- Message Field -->
+                <!-- Required field with minimum 10 characters validation -->
+                <div class="form-group">
+                    <label for="message">Message: <span class="required">*</span></label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <span class="error-message" id="messageError"></span>
+                </div>
+
+                <!-- Form Buttons -->
+                <!-- Submit button validates and shows success, Clear button resets form -->
+                <div class="form-buttons">
+                    <button type="submit" class="btn">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Clear Form</button>
+                </div>
+            </form>
+        </section>
+
+        <!-- Success Dialog -->
+        <!-- Hidden dialog shown after successful form submission (jQuery-UI in Part 3) -->
+        <div id="success-dialog" title="Message Sent!" style="display: none;">
+            <p>Thank you for your message! We'll get back to you soon.</p>
+        </div>
+    </main>
+
+    <!-- Footer Section -->
+    <!-- Contains copyright information and validation links -->
+    <footer>
+        <p>&copy; 2025 CodeAggie - NC A&T State University | Created by Paul Pugh</p>
+        <a href="https://validator.w3.org/check?uri=referer" referrerpolicy="unsafe-url">
+            Validate HTML
+        </a>
+        <br>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" referrerpolicy="unsafe-url">
+            Validate CSS
+        </a>
+    </footer>
+
+    <!-- JavaScript file (functionality will be added in Part 3) -->
+    <script src="js/script.js"></script>
+</body>
+</html>

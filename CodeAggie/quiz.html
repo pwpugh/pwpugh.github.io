@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAggie - JavaScript Quiz</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery and jQuery-UI for accordion widget (Part 3) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <!-- Contains the main branding and site title -->
+    <header>
+        <h1>CodeAggie</h1>
+        <p class="tagline">Master JavaScript Basics - NC A&T</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <!-- This navigation bar appears on all pages and contains links to the four main pages:
+         (1) "index.html": Home page with overview and welcome message
+         (2) "quiz.html": Interactive JavaScript quiz page
+         (3) "examples.html": Code examples and calculator tool
+         (4) "about.html": About information and contact form -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html" class="active">Quiz</a></li>
+            <li><a href="examples.html">Examples</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <!-- Contains the quiz functionality including topic selection and questions -->
+    <main>
+        <h2>JavaScript Quiz</h2>
+        <p>Test your knowledge! Select a topic and answer the questions below.</p>
+
+        <!-- Quiz Container -->
+        <!-- Holds all quiz-related sections including topic selection, questions, and results -->
+        <section class="quiz-container">
+            <!-- Topic Selection Section -->
+            <!-- Allows user to choose from Variables, Functions, Loops, or Arrays -->
+            <div class="topic-selection">
+                <label for="topic">Choose a Topic:</label>
+                <select id="topic" name="topic">
+                    <option value="">-- Select a Topic --</option>
+                    <option value="variables">Variables</option>
+                    <option value="functions">Functions</option>
+                    <option value="loops">Loops</option>
+                    <option value="arrays">Arrays</option>
+                </select>
+                <button id="loadQuiz" class="btn">Load Quiz</button>
+            </div>
+
+            <!-- Quiz Questions Area -->
+            <!-- Questions will be loaded here dynamically via AJAX in Part 3 -->
+            <div id="quiz-content" style="display: none;">
+                <form id="quizForm">
+                    <!-- Sample Question 1 -->
+                    <div class="question">
+                        <h4>Question 1: Which keyword is used to declare a variable that can be reassigned?</h4>
+                        <label><input type="radio" name="q1" value="0"> const</label>
+                        <label><input type="radio" name="q1" value="1"> let</label>
+                        <label><input type="radio" name="q1" value="2"> var</label>
+                        <label><input type="radio" name="q1" value="3"> function</label>
+                    </div>
+
+                    <!-- Sample Question 2 -->
+                    <div class="question">
+                        <h4>Question 2: What is the correct way to declare a constant?</h4>
+                        <label><input type="radio" name="q2" value="0"> var PI = 3.14</label>
+                        <label><input type="radio" name="q2" value="1"> let PI = 3.14</label>
+                        <label><input type="radio" name="q2" value="2"> const PI = 3.14</label>
+                        <label><input type="radio" name="q2" value="3"> constant PI = 3.14</label>
+                    </div>
+
+                    <!-- Sample Question 3 -->
+                    <div class="question">
+                        <h4>Question 3: Which of these is NOT a valid variable name?</h4>
+                        <label><input type="radio" name="q3" value="0"> myVariable</label>
+                        <label><input type="radio" name="q3" value="1"> _privateVar</label>
+                        <label><input type="radio" name="q3" value="2"> 2ndPlace</label>
+                        <label><input type="radio" name="q3" value="3"> $price</label>
+                    </div>
+
+                    <!-- Sample Question 4 -->
+                    <div class="question">
+                        <h4>Question 4: What value does an uninitialized variable have?</h4>
+                        <label><input type="radio" name="q4" value="0"> null</label>
+                        <label><input type="radio" name="q4" value="1"> 0</label>
+                        <label><input type="radio" name="q4" value="2"> undefined</label>
+                        <label><input type="radio" name="q4" value="3"> empty</label>
+                    </div>
+
+                    <!-- Sample Question 5 -->
+                    <div class="question">
+                        <h4>Question 5: Which operator is used to assign a value to a variable?</h4>
+                        <label><input type="radio" name="q5" value="0"> ==</label>
+                        <label><input type="radio" name="q5" value="1"> =</label>
+                        <label><input type="radio" name="q5" value="2"> ===</label>
+                        <label><input type="radio" name="q5" value="3"> :</label>
+                    </div>
+                </form>
+                
+                <!-- Quiz Action Buttons -->
+                <button id="submitQuiz" class="btn">Submit Quiz</button>
+                <button id="resetQuiz" class="btn btn-secondary">Try Another Topic</button>
+            </div>
+
+            <!-- Score Display Section -->
+            <!-- Shows the user's quiz score after submission -->
+            <div id="score-display" style="display: none;">
+                <h3>Your Score: <span id="score">0</span> out of <span id="total">5</span></h3>
+                <p id="score-message">Great job!</p>
+            </div>
+
+            <!-- Answer Explanations Section -->
+            <!-- Uses jQuery-UI Accordion to show/hide explanations (Part 3) -->
+            <div id="explanations" style="display: none;">
+                <h3>Answer Explanations</h3>
+                <div id="accordion">
+                    <!-- Explanations will be added here dynamically in Part 3 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <!-- Contains copyright information and validation links -->
+    <footer>
+        <p>&copy; 2025 CodeAggie - NC A&T State University | Created by Paul Pugh</p>
+        <a href="https://validator.w3.org/check?uri=referer" referrerpolicy="unsafe-url">
+            Validate HTML
+        </a>
+        <br>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" referrerpolicy="unsafe-url">
+            Validate CSS
+        </a>
+    </footer>
+
+    <!-- JavaScript file (functionality will be added in Part 3) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
