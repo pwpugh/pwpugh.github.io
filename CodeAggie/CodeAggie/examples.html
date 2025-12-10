@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeAggie - Code Examples</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- jQuery and jQuery-UI for tabs widget (Part 3) -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <!-- Contains the main branding and site title -->
+    <header>
+        <h1>CodeAggie</h1>
+        <p class="tagline">Master JavaScript Basics - NC A&T</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <!-- This navigation bar appears on all pages and contains links to the four main pages:
+         (1) "index.html": Home page with overview and welcome message
+         (2) "quiz.html": Interactive JavaScript quiz page
+         (3) "examples.html": Code examples and calculator tool
+         (4) "about.html": About information and contact form -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="examples.html" class="active">Examples</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content Area -->
+    <!-- Contains code examples organized by topics and a calculator tool -->
+    <main>
+        <h2>JavaScript Code Examples</h2>
+        <p>Explore code examples organized by topic. Try the calculator tool below!</p>
+
+        <!-- Tabs Section -->
+        <!-- Uses jQuery-UI Tabs to organize examples by topic (Part 3) -->
+        <div id="tabs">
+            <ul>
+                <li><a href="#tab-variables">Variables</a></li>
+                <li><a href="#tab-functions">Functions</a></li>
+                <li><a href="#tab-loops">Loops</a></li>
+            </ul>
+
+            <!-- Variables Tab -->
+            <!-- Shows examples of JavaScript variable declarations -->
+            <div id="tab-variables">
+                <h3>JavaScript Variables</h3>
+                <p>Variables store data values. You can use <code>let</code>, <code>const</code>, or <code>var</code>.</p>
+                <div class="code-example">
+                    <pre><code>// Declaring variables
+let name = "Student";
+const age = 20;
+var city = "Greensboro";
+
+console.log(name); // Output: Student</code></pre>
+                </div>
+                <p><strong>Best Practice:</strong> Use <code>const</code> for values that won't change, and <code>let</code> for values that will.</p>
+            </div>
+
+            <!-- Functions Tab -->
+            <!-- Shows examples of JavaScript functions -->
+            <div id="tab-functions">
+                <h3>JavaScript Functions</h3>
+                <p>Functions are reusable blocks of code that perform specific tasks.</p>
+                <div class="code-example">
+                    <pre><code>// Function declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Calling the function
+console.log(greet("CodeAggie")); 
+// Output: Hello, CodeAggie!</code></pre>
+                </div>
+                <p><strong>Tip:</strong> Functions help organize your code and make it reusable!</p>
+            </div>
+
+            <!-- Loops Tab -->
+            <!-- Shows examples of JavaScript loops -->
+            <div id="tab-loops">
+                <h3>JavaScript Loops</h3>
+                <p>Loops repeat code multiple times. The <code>for</code> loop is most common.</p>
+                <div class="code-example">
+                    <pre><code>// For loop example
+for (let i = 1; i <= 5; i++) {
+    console.log("Count: " + i);
+}
+
+// Output:
+// Count: 1
+// Count: 2
+// Count: 3
+// Count: 4
+// Count: 5</code></pre>
+                </div>
+                <p><strong>Remember:</strong> Loops save you from writing repetitive code!</p>
+            </div>
+        </div>
+
+        <!-- Calculator Section -->
+        <!-- Interactive tool that adds two numbers (functionality in Part 3) -->
+        <section class="calculator-section">
+            <h2>Try It: Simple Calculator</h2>
+            <p>Add two numbers together using JavaScript!</p>
+            <div class="calculator">
+                <label for="num1">First Number:</label>
+                <input type="number" id="num1" placeholder="Enter first number">
+
+                <label for="num2">Second Number:</label>
+                <input type="number" id="num2" placeholder="Enter second number">
+
+                <button id="calculate" class="btn">Calculate Sum</button>
+
+                <div id="calc-result">
+                    <p><strong>Result:</strong> <span id="result-value">--</span></p>
+                </div>
+                <p id="calc-error" style="color: red; display: none;">Please enter valid numbers!</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <!-- Contains copyright information and validation links -->
+    <footer>
+        <p>&copy; 2025 CodeAggie - NC A&T State University | Created by Paul Pugh</p>
+        <a href="https://validator.w3.org/check?uri=referer" referrerpolicy="unsafe-url">
+            Validate HTML
+        </a>
+        <br>
+        <a href="https://jigsaw.w3.org/css-validator/check/referer" referrerpolicy="unsafe-url">
+            Validate CSS
+        </a>
+    </footer>
+
+    <!-- JavaScript file (functionality will be added in Part 3) -->
+    <script src="js/script.js"></script>
+</body>
+</html>
